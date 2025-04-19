@@ -73,6 +73,17 @@ def load_limited_banner(pity: LimitedPity, version: str = '1.0.1') -> LimitedBan
     return LimitedBanner(loot_pool, five_star_rate_up, four_star_rate_up, pity)
 
 
+def load_light_cone_banner(pity: LightConePity, version: str = '1.0.1') -> LimitedBanner:
+    """loads light cone banner"""
+    rate_up = _load_rate_up(RATE_UP_FILE_PATH)
+    loot_pool = _load_items(STANDARD_BANNER_FILE_PATH)
+
+    five_star_rate_up = rate_up[version]['light cone'][5][0]
+    four_star_rate_up = rate_up[version]['light cone'][4]
+
+    return LimitedBanner(loot_pool, five_star_rate_up, four_star_rate_up, pity)
+
+
 def load_player_data(id: str) -> Player:
     """
     loads players from file_path

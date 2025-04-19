@@ -1,51 +1,8 @@
 """run star rail pulling similator (mainly for testing)"""
 
 from player_classes import Player
-from loading import load_limited_banner, load_player_data, find_file, load_standard_banner
-
-
-PLAYER_DATA_FOLDER_FILE_PATH = 'json/player_data/'
-
-# file_name would be f'{PLAYER_DATA_NAME_TEMPLATE}_{id}.json'
-PLAYER_DATA_NAME_TEMPLATE = 'player_id_'
-PLAYER_DATA_NAME_TEMPLATE_WITH_FOLDER = 'json/player_data/player_id_'
-
-
-def validate_choice(inp: str, choices: list | set) -> None:
-    """run until inp in choices"""
-    while inp not in choices:
-        inp = input('Please select a valid choice.\n')
-
-
-def validate_id_overwrite(inp: str) -> str:
-    """ask for confirmation of overwriting save"""
-    file_path = f'{PLAYER_DATA_NAME_TEMPLATE}{inp}.json'
-    if find_file(file_path, PLAYER_DATA_FOLDER_FILE_PATH) is not None:
-        print(f'This will over write {PLAYER_DATA_FOLDER_FILE_PATH}{PLAYER_DATA_NAME_TEMPLATE}{inp} \n'
-              f'are you sure?')
-        confirm = input('Y/N\n').upper()
-        validate_choice(confirm, ['Y', 'N'])
-
-        if confirm == 'Y':
-            print('Ok, overwriting save.')
-            return inp
-        else:
-            inp = input('Please pick a new id.\n')
-            return validate_id_overwrite(inp)
-
-    else:
-        print('This is a new id.')
-        return inp
-
-
-def validate_id(inp: str):
-    """validate that inp is an id of a save"""
-    file_path = f'{PLAYER_DATA_NAME_TEMPLATE}{inp}.json'
-    if find_file(file_path, PLAYER_DATA_FOLDER_FILE_PATH) is not None:
-        return
-    else:
-        inp = input('Please enter a valid id.\n')
-        validate_id(inp)
+from loading import load_light_cone_banner, load_limited_banner, load_player_data, load_standard_banner
+from validate import *
 
 
 if __name__ == '__main__':
@@ -61,7 +18,7 @@ if __name__ == '__main__':
         choices = ['1', '2', '3']
         inp = input()
 
-        validate_choice(inp, choices)
+        inp = validate_choice(inp, choices)
 
         if inp == '3':
             running = False
@@ -85,37 +42,64 @@ if __name__ == '__main__':
             print('Loading player save...')
             player = load_player_data(inp)
 
-        while running:
+        choosing_banner = True
+        while choosing_banner:
 
-            # banner = load_standard_banner(player.pity.standard_pity)
-            banner = load_limited_banner(player.pity.limited_pity)
-
-            print('-------------------------------')
-            print('What would you like to do?')
-            print('1: do a single pull')
-            print('2: do a ten pull')
-            print('3: show inventory')
-            print('4: show pity')
-            print('5: save')
-            print('6: quit')
-            print('-------------------------------')
-
-            choices = ['1', '2', '3', '4', '5', '6']
+            print('What banner do you want to pull on?')
+            print('1: standard')
+            print('2: limited')
+            print('3: light cone')
+            print('4: quit choosing banner')
             inp = input()
-            validate_choice(inp, choices)
+            inp = validate_choice(inp, {'1', '2', '3', '4'})
 
-            print('-------------------------------')
             if inp == '1':
-                player.pull(1, banner)
-            elif inp == '2':
-                player.pull(10, banner)
-            elif inp == '3':
-                player.show_inventory()
+                banner = load_standard_banner(player.pity.standard_pity)
             elif inp == '4':
-                player.show_pity()
-            elif inp == '5':
-                player.save()
-                print('Saving...')
+                choosing_banner = False
             else:
-                running = False
-                print('Quitting...')
+                print('What version?')
+                print('Must be valid version.')
+                version = input()
+                version = validate_banner(version)
+
+                if inp == '2':
+                    banner = load_limited_banner(player.pity.limited_pity)
+                else:
+                    banner = load_light_cone_banner(player.pity.light_cone_pity)
+
+            pulling = True
+            while pulling:
+
+                # banner = load_standard_banner(player.pity.standard_pity)
+                banner = load_limited_banner(player.pity.limited_pity)
+
+                print('-------------------------------')
+                print('What would you like to do?')
+                print('1: do a single pull')
+                print('2: do a ten pull')
+                print('3: show inventory')
+                print('4: show pity')
+                print('5: save')
+                print('6: quit pulling')
+                print('-------------------------------')
+
+                choices = ['1', '2', '3', '4', '5', '6']
+                inp = input()
+                validate_choice(inp, choices)
+
+                print('-------------------------------')
+                if inp == '1':
+                    player.pull(1, banner)
+                elif inp == '2':
+                    player.pull(10, banner)
+                elif inp == '3':
+                    player.show_inventory()
+                elif inp == '4':
+                    player.show_pity()
+                elif inp == '5':
+                    player.save()
+                    print('Saving...')
+                else:
+                    pulling = False
+                    print('Quitting...')
