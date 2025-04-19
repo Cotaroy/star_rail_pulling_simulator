@@ -4,7 +4,7 @@ from item import Item
 import json
 
 
-def load_items(file_path: str) -> dict[int, set[Item]]:
+def load_items(file_path: str) -> dict[int, list[Item]]:
     """
     loads items from file_path
 
@@ -14,11 +14,11 @@ def load_items(file_path: str) -> dict[int, set[Item]]:
     with open(file_path, 'r') as file:
         data = json.load(file)
 
-    output = {5: set(), 4: set(), 3: set()}
+    output = {5: [], 4: [], 3: []}
 
     for star in data:
         for name in data[star]:
-            item = Item(name, star)
-            output[star].add(item)
+            item = Item(name, int(star))
+            output[int(star)].append(item)
 
     return output

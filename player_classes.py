@@ -51,7 +51,7 @@ class Inventory:
 
     items: [star: dict[Item, number of that Item]]
     """
-    items: dict[int, [dict[Item, int], dict[Item, int], dict[Item, int]]] | dict[int: dict]
+    items: dict[int, [dict[str, int], dict[str, int], dict[str, int]]] | dict[int: dict]
 
     def __init__(self, items=None):
         if items is None:
@@ -89,10 +89,10 @@ class Inventory:
 
     def _add_to_inventory(self, item, star):
         """helper"""
-        if item not in self.items[star]:
-            self.items[star][item] = 1
+        if item.name not in self.items[star]:
+            self.items[star][item.name] = 1
         else:
-            self.items[star][item] += 1
+            self.items[star][item.name] += 1
 
 
 class PlayerPity:
@@ -114,9 +114,9 @@ class PlayerPity:
 
     def __str__(self):
         build = (f'---------------------\n'
-                 f'Limited Pity: {str(self.limited_pity)}\n'
-                 f'Light Cone Pity: {str(self.light_cone_pity)}\n'
-                 f'Standard Pity: {str(self.standard_pity)}\n'
+                 f'Limited Pity: \t\t{str(self.limited_pity)}\n'
+                 f'Light Cone Pity: \t{str(self.light_cone_pity)}\n'
+                 f'Standard Pity: \t\t{str(self.standard_pity)}\n'
                  f'---------------------\n')
         return build
 

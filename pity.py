@@ -20,7 +20,7 @@ class Pity:
         self.four_star_pity, self.five_star_pity = 0, 0
 
     def __str__(self):
-        return f'5: {self.five_star_pity}, 4: {self.four_star_pity}'
+        return f'5: {self.five_star_pity}, \t 4: {self.four_star_pity}'
 
     def change_pity(self, item: Item):
         """
@@ -83,7 +83,7 @@ class LimitedPity(Pity):
         self.gaurantee = False
 
     def __str__(self):
-        return f'5: {self.five_star_pity}, 4: {self.four_star_pity}, gaurantee: {self.gaurantee}'
+        return f'5: {self.five_star_pity}, \t 4: {self.four_star_pity}, \t gaurantee: {self.gaurantee}'
 
     def change_pity(self, item: Item):
         """

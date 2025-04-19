@@ -3,12 +3,14 @@
 from __future__ import annotations
 from item import Item
 from pity import Pity
+from dataclasses import dataclass
 
 import random
 
-from star_rail_pulling_simulator.pity import LimitedPity
+from pity import LimitedPity
 
 
+@dataclass
 class Banner:
     """
     a banner you can pull on
@@ -17,15 +19,8 @@ class Banner:
     - loot_pool: dictionary of items that can be pulled {star: Item}
     - pity: the pity on this banner
     """
-    loot_pool: dict[int: set[Item]]
+    loot_pool: dict[int: list[Item]]
     pity: Pity
-
-    def __init__(self, loot_pool, pity=None):
-        if pity is None:
-            pity = Pity()
-
-        self.loot_pool = loot_pool
-        self.pity = pity
 
     def pull(self) -> Item:
         """
@@ -51,7 +46,9 @@ class Banner:
             return item
         # pulled a three star
         else:
-            return random.choice(self.loot_pool[3])
+            item = random.choice(self.loot_pool[3])
+            self.pity.change_pity(item)
+            return item
 
     def pull_five_star(self) -> Item:
         """return a random five star"""
@@ -69,10 +66,7 @@ class LimitedBanner(Banner):
     rate_up: Item
     pity: LimitedPity
 
-    def __init__(self, rate_up, pity=None):
-        if pity is None:
-            pity = LimitedPity()
-
+    def __init__(self, rate_up, pity):
         super().__init__()
         self.rate_up = rate_up
         self.pity = pity
