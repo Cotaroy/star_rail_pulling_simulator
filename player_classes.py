@@ -8,6 +8,8 @@ from item import Item
 from pity import StandardPity, LightConePity, LimitedPity
 from banner import Banner
 
+PLAYER_DATA_FOLDER_FILE_PATH = 'json/player_data/'
+
 
 class Player:
     """
@@ -54,7 +56,7 @@ class Player:
             self._inventory.add_to_inventory(item)
             print(f'You got {str(item)}')
 
-    def save(self, file_path):
+    def save(self):
         """
         save player data to file_path_player_id_{id}
 
@@ -65,7 +67,7 @@ class Player:
 
         dct = {self.id: [inv, pity]}
 
-        with open(file_path + f'player_id_{self.id}.json', 'w') as file:
+        with open(PLAYER_DATA_FOLDER_FILE_PATH + f'player_id_{self.id}.json', 'w') as file:
             json.dump(dct, file, **{'indent': 4})
 
 

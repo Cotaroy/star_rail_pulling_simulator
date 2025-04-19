@@ -77,7 +77,7 @@ if __name__ == '__main__':
             print('Creating new player save...')
             player = Player(inp)
             print(inp)
-            player.save(PLAYER_DATA_FOLDER_FILE_PATH)
+            player.save()
         else:
             inp = input('Enter the id of the save you would like to load.\n')
 
@@ -114,7 +114,7 @@ if __name__ == '__main__':
             elif inp == '4':
                 player.show_pity()
             elif inp == '5':
-                player.save(PLAYER_DATA_FOLDER_FILE_PATH)
+                player.save()
                 print('Saving...')
             else:
                 running = False
