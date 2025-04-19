@@ -54,6 +54,10 @@ class Banner:
         """return a random five star"""
         return random.choice(self.loot_pool[5])
 
+    def pull_four_star(self) -> Item:
+        """return a random four star"""
+        return random.choice(self.loot_pool[4])
+
 
 class LimitedBanner(Banner):
     """
@@ -61,20 +65,32 @@ class LimitedBanner(Banner):
 
     Instance Attributes:
     - loot_pool: dictionary of items that can be pulled {star: Item}
-    - rate_up: the item that is on rate_up
+    - five_star_rate_up: the five star item that is on rate_up
+    - four_star_rate_up: the four star items that are on rate_up
     """
-    rate_up: Item
+    five_star_rate_up: Item
+    four_star_rate_up: tuple[Item, Item, Item]
     pity: LimitedPity
 
     def __init__(self, rate_up, pity):
         super().__init__()
-        self.rate_up = rate_up
+        self.five_star_rate_up = rate_up
         self.pity = pity
 
     def pull_five_star(self) -> Item:
-        """return a random five star based on gaurantee"""
+        """return a random five star based on gaurantee and rate up"""
         if self.pity.gaurantee:
-            return self.rate_up
+            return self.five_star_rate_up
         else:
+            rand = random.randint(1, 2)
+            if rand == 1:
+                return self.five_star_rate_up
             return random.choice(self.loot_pool[5])
+
+    def pull_four_star(self) -> Item:
+        """return a random four star based on rate up"""
+        rand = random.randint(1, 2)
+        if rand == 1:
+            return random.choice(self.four_star_rate_up)
+        return random.choice(self.loot_pool[4])
 
