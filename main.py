@@ -1,10 +1,9 @@
 """run star rail pulling similator (mainly for testing)"""
 
 from player_classes import Player
-from loading import load_items, load_player_data, find_file
-from banner import Banner
+from loading import load_limited_banner, load_player_data, find_file, load_standard_banner
 
-STANDARD_BANNER_FILE_PATH = 'json/banner_data/standard_banner.json'
+
 PLAYER_DATA_FOLDER_FILE_PATH = 'json/player_data/'
 
 # file_name would be f'{PLAYER_DATA_NAME_TEMPLATE}_{id}.json'
@@ -88,9 +87,8 @@ if __name__ == '__main__':
 
         while running:
 
-            # TODO only standard works right now
-            standard_loot_pool = load_items(STANDARD_BANNER_FILE_PATH)
-            banner = Banner(standard_loot_pool, player.pity.standard_pity)
+            # banner = load_standard_banner(player.pity.standard_pity)
+            banner = load_limited_banner(player.pity.limited_pity)
 
             print('-------------------------------')
             print('What would you like to do?')

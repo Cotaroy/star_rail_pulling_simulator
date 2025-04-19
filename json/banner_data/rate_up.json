@@ -1,0 +1,24 @@
+{
+    "1.0.1": {
+        "limited": {
+            "5": {
+                "Seele": "character"
+            },
+            "4": {
+                "Pela": "character",
+                "Natasha": "character",
+                "Hook": "character"
+            }
+        },
+        "light cone": {
+            "5": {
+                "In the Night": "light cone"
+            },
+            "4": {
+                "Post-Op Conversation": "light cone",
+                "The Moles Welcome You": "light cone",
+                "Good Night and Sleep Well": "light cone"
+            }
+        }
+    }
+}

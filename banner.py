@@ -41,7 +41,7 @@ class Banner:
             return item
         # pulled a four star
         elif num <= limt_four + limit_five:
-            item = random.choice(self.loot_pool[4])
+            item = self.pull_four_star()
             self.pity.change_pity(item)
             return item
         # pulled a three star
@@ -69,22 +69,24 @@ class LimitedBanner(Banner):
     - four_star_rate_up: the four star items that are on rate_up
     """
     five_star_rate_up: Item
-    four_star_rate_up: tuple[Item, Item, Item]
+    four_star_rate_up: list[Item]
     pity: LimitedPity
 
-    def __init__(self, rate_up, pity):
-        super().__init__()
-        self.five_star_rate_up = rate_up
-        self.pity = pity
+    def __init__(self, loot_pool, five, four, pity):
+        super().__init__(loot_pool, pity)
+        self.five_star_rate_up = five
+        self.four_star_rate_up = four
 
     def pull_five_star(self) -> Item:
         """return a random five star based on gaurantee and rate up"""
         if self.pity.gaurantee:
+            self.pity.gaurantee = False
             return self.five_star_rate_up
         else:
             rand = random.randint(1, 2)
             if rand == 1:
                 return self.five_star_rate_up
+            self.pity.gaurantee = True
             return random.choice(self.loot_pool[5])
 
     def pull_four_star(self) -> Item:

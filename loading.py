@@ -1,8 +1,9 @@
 """loading functions"""
-
+from banner import LimitedBanner, Banner
 from item import Item
 import json
 import os
+
 from player_classes import Inventory, Player, PlayerPity
 from pity import StandardPity, LimitedPity, LightConePity
 
@@ -11,8 +12,11 @@ PLAYER_DATA_FOLDER_FILE_PATH = 'json/player_data/'
 # file_name would be f'{PLAYER_DATA_NAME_TEMPLATE}_{id}.json'
 PLAYER_DATA_NAME_TEMPLATE = 'player_id_'
 
+STANDARD_BANNER_FILE_PATH = 'json/banner_data/standard_banner.json'
+RATE_UP_FILE_PATH = 'json/banner_data/rate_up.json'
 
-def load_items(file_path: str) -> dict[int, list[Item]]:
+
+def _load_items(file_path: str) -> dict[int, list[Item]]:
     """
     loads items from file_path
 
@@ -30,6 +34,43 @@ def load_items(file_path: str) -> dict[int, list[Item]]:
             output[int(star)].append(item)
 
     return output
+
+
+def _load_rate_up(file_path: str) -> dict:
+    """loads items from file_path"""
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+
+    output = {}
+
+    for version in data:
+        output[version] = {}
+        for banner in data[version]:
+            dict = {5: [], 4: []}
+            for star in data[version][banner]:
+                for name in data[version][banner][star]:
+                    item = Item(name, int(star),  data[version][banner][star][name])
+                    dict[int(star)].append(item)
+            output[version][banner] = dict
+
+    return output
+
+
+def load_standard_banner(pity: StandardPity) -> Banner:
+    """loads standard banner"""
+    standard_loot_pool = _load_items(STANDARD_BANNER_FILE_PATH)
+    return Banner(standard_loot_pool, pity)
+
+
+def load_limited_banner(pity: LimitedPity, version: str = '1.0.1') -> LimitedBanner:
+    """loads limited banner"""
+    rate_up = _load_rate_up(RATE_UP_FILE_PATH)
+    loot_pool = _load_items(STANDARD_BANNER_FILE_PATH)
+
+    five_star_rate_up = rate_up[version]['limited'][5][0]
+    four_star_rate_up = rate_up[version]['limited'][4]
+
+    return LimitedBanner(loot_pool, five_star_rate_up, four_star_rate_up, pity)
 
 
 def load_player_data(id: str) -> Player:

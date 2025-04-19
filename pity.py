@@ -82,7 +82,6 @@ class LimitedPity(Pity):
     - gaurantee: if 50/50 is gauranteed win
         self.gaurantee == True -> next 5 star is limited
     """
-    rate_up: Item
     gaurantee: bool
 
     def __init__(self, four=0, five=0, gaur=False):
@@ -103,10 +102,6 @@ class LimitedPity(Pity):
         elif item.star == 5:
             self.five_star_pity = 0
             self.four_star_pity += 1
-            if item != self.rate_up:
-                self.gaurantee = True
-            else:
-                self.gaurantee = False
         else:
             self.four_star_pity += 1
             self.five_star_pity += 1
