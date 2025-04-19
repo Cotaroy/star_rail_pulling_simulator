@@ -26,7 +26,7 @@ def load_items(file_path: str) -> dict[int, list[Item]]:
 
     for star in data:
         for name in data[star]:
-            item = Item(name, int(star))
+            item = Item(name, int(star), data[star][name])
             output[int(star)].append(item)
 
     return output

@@ -9,9 +9,14 @@ class Item:
 
     name: name of the item
     star: how many stars it is
+    type: type of item
+
+    type in {'character', 'light cone'}
+
     """
     name: str
     star: int
+    type: str
 
     def __str__(self):
         if self.star == 3:
