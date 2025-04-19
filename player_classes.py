@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+
 from item import Item
 from pity import StandardPity, LightConePity, LimitedPity
 from banner import Banner
@@ -12,19 +14,27 @@ class Player:
     player class
 
     Instance Attributes
-    - inventory: dictionary {item_name: number of that item}
-    - pity: how many pulls since last five star
+    - id: the player ID
+    - _inventory: dictionary {item_name: number of that item}
+    - _pity: how many pulls since last five star
     """
-    inventory: Inventory
+    id: int
+    _inventory: Inventory
     pity: PlayerPity
 
-    def __init__(self):
-        self.inventory = Inventory()
-        self.pity = PlayerPity()
+    def __init__(self, id, inv=None, pity=None):
+        if inv is None:
+            inv = Inventory()
+        if pity is None:
+            pity = PlayerPity()
+
+        self.id = id
+        self._inventory = inv
+        self.pity = pity
 
     def show_inventory(self):
         """show inventory"""
-        print(self.inventory)
+        print(self._inventory)
 
     def show_pity(self):
         """show pity"""
@@ -41,8 +51,22 @@ class Player:
         """
         for _ in range(n):
             item = banner.pull()
-            self.inventory.add_to_inventory(item)
+            self._inventory.add_to_inventory(item)
             print(f'You got {str(item)}')
+
+    def save(self, file_path):
+        """
+        save player data to file_path_player_id_{id}
+
+        file_path should just be the path to the foler that all player data files will be stored in
+        """
+        inv = self._inventory.to_dict()
+        pity = self.pity.to_dict()
+
+        dct = {self.id: [inv, pity]}
+
+        with open(file_path + f'player_id_{self.id}.json', 'w') as file:
+            json.dump(dct, file, **{'indent': 4})
 
 
 class Inventory:
@@ -94,6 +118,10 @@ class Inventory:
         else:
             self.items[star][item.name] += 1
 
+    def to_dict(self):
+        """to dict"""
+        return self.items
+
 
 class PlayerPity:
     """tracks the three types of pity"""
@@ -120,3 +148,10 @@ class PlayerPity:
                  f'---------------------\n')
         return build
 
+    def to_dict(self):
+        """to dict"""
+        dct = {"standard_pity": self.standard_pity.to_list(),
+               "limited_pity": self.limited_pity.to_list(),
+               "light_cone_pity": self.light_cone_pity.to_list()}
+
+        return dct

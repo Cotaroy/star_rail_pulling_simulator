@@ -10,14 +10,14 @@ class Pity:
     tracks four/five star pity
 
     Instance Attributes:
-    - five_star_pity: five star pity
     - four_star_pity: four star pity
+    - five_star_pity: five star pity
     """
-    five_star_pity: int
     four_star_pity: int
+    five_star_pity: int
 
-    def __init__(self):
-        self.four_star_pity, self.five_star_pity = 0, 0
+    def __init__(self, four=0, five=0):
+        self.four_star_pity, self.five_star_pity = four, five
 
     def __str__(self):
         return f'5: {self.five_star_pity}, \t 4: {self.four_star_pity}'
@@ -64,6 +64,13 @@ class Pity:
         else:
             return 0.943
 
+    def to_list(self):
+        """
+        to list
+        returns [four pity, five pity]
+        """
+        return [self.four_star_pity, self.five_star_pity]
+
 
 class LimitedPity(Pity):
     """
@@ -78,9 +85,9 @@ class LimitedPity(Pity):
     rate_up: Item
     gaurantee: bool
 
-    def __init__(self):
-        super().__init__()
-        self.gaurantee = False
+    def __init__(self, four=0, five=0, gaur=False):
+        super().__init__(four, five)
+        self.gaurantee = gaur
 
     def __str__(self):
         return f'5: {self.five_star_pity}, \t 4: {self.four_star_pity}, \t gaurantee: {self.gaurantee}'
@@ -104,11 +111,16 @@ class LimitedPity(Pity):
             self.four_star_pity += 1
             self.five_star_pity += 1
 
+    def to_list(self):
+        """
+        to list
+        returns [four pity, five pity, gaurantee]
+        """
+        return [self.four_star_pity, self.five_star_pity, self.gaurantee]
+
 
 class StandardPity(Pity):
     """identical to Pity"""
-    def __init__(self):
-        super().__init__()
 
 
 class LightConePity(LimitedPity):
@@ -118,8 +130,8 @@ class LightConePity(LimitedPity):
     Instance Attributes:
     - same as LimitedPity
     """
-    def __init__(self):
-        super().__init__()
+    def __init__(self, four=0, five=0, gaur=False):
+        super().__init__(four, five, gaur)
 
     def at_hard_pity(self, star: int):
         """
