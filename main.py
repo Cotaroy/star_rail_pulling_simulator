@@ -84,7 +84,7 @@ if __name__ == '__main__':
 
                 choices = ['1', '2', '3', '4', '5', '6']
                 inp = input()
-                validate_choice(inp, choices)
+                inp = validate_choice(inp, choices)
 
                 print('-------------------------------')
                 if inp == '1':
