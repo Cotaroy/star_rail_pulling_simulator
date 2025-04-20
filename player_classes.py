@@ -8,7 +8,7 @@ from item import Item
 from pity import StandardPity, LightConePity, LimitedPity
 from banner import Banner
 
-PLAYER_DATA_FOLDER_FILE_PATH = 'json/player_data/'
+from constants import PLAYER_DATA_FOLDER_FILE_PATH
 
 
 class Player:

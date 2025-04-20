@@ -7,15 +7,9 @@ import os
 from player_classes import Inventory, Player, PlayerPity
 from pity import StandardPity, LimitedPity, LightConePity
 
-PLAYER_DATA_FOLDER_FILE_PATH = 'json/player_data/'
-
-# file_name would be f'{PLAYER_DATA_NAME_TEMPLATE}_{id}.json'
-PLAYER_DATA_NAME_TEMPLATE = 'player_id_'
-
-STANDARD_BANNER_FILE_PATH = 'json/banner_data/standard_banner.json'
-LIMITED_BANNER_FILE_PATH = 'json/banner_data/limited_banner.json'
-LIGHT_CONE_FILE_PATH = 'json/banner_data/light_cone.json'
-RATE_UP_FILE_PATH = 'json/banner_data/rate_up.json'
+from constants import (PLAYER_DATA_FOLDER_FILE_PATH, PLAYER_DATA_NAME_TEMPLATE,
+                       STANDARD_BANNER_FILE_PATH, LIMITED_BANNER_FILE_PATH,
+                       LIGHT_CONE_FILE_PATH, RATE_UP_FILE_PATH)
 
 
 def _load_items(file_path: str) -> dict[int, list[Item]]:

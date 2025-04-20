@@ -2,12 +2,8 @@
 from loading import find_file
 from loading import _load_rate_up
 
-PLAYER_DATA_FOLDER_FILE_PATH = 'json/player_data/'
-
-# file_name would be f'{PLAYER_DATA_NAME_TEMPLATE}_{id}.json'
-PLAYER_DATA_NAME_TEMPLATE = 'player_id_'
-PLAYER_DATA_NAME_TEMPLATE_WITH_FOLDER = 'json/player_data/player_id_'
-RATE_UP_FILE_PATH = 'json/banner_data/rate_up.json'
+from constants import PLAYER_DATA_FOLDER_FILE_PATH, PLAYER_DATA_NAME_TEMPLATE, PLAYER_DATA_NAME_TEMPLATE_WITH_FOLDER
+from constants import RATE_UP_FILE_PATH
 
 
 def validate_choice(inp: str, choices: list | set) -> str:

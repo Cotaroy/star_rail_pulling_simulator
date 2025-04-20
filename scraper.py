@@ -4,9 +4,8 @@ import json
 from bs4 import BeautifulSoup
 import requests
 
-WEB_ADDRESS = 'https://game8.co/games/Honkai-Star-Rail/archives/474951'
-SCRAPE_TARGET_HTML_NAME = 'to_be_scraped.html'
-RATE_UP_FILE_PATH = 'json/banner_data/rate_up.json'
+from constants import WEB_ADDRESS, SCRAPE_TARGET_HTML_NAME, RATE_UP_FILE_PATH
+
 
 def refresh():
     """refresh the to_be_scraped.html"""
