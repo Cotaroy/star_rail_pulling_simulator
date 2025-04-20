@@ -54,7 +54,7 @@ class Player:
         for _ in range(n):
             item = banner.pull()
             self._inventory.add_to_inventory(item)
-            print(f'You got {str(item)}')
+            print(f'[{banner.pity.five_star_pity}] \t You got {str(item)}')
 
     def save(self):
         """
