@@ -1,5 +1,5 @@
 """loading functions"""
-from banner import LimitedBanner, Banner
+from banner import LightConeBanner, LimitedBanner, Banner
 from item import Item
 import json
 import os
@@ -73,7 +73,7 @@ def load_limited_banner(pity: LimitedPity, version: str = '1.0.1') -> LimitedBan
     return LimitedBanner(loot_pool, five_star_rate_up, four_star_rate_up, pity)
 
 
-def load_light_cone_banner(pity: LightConePity, version: str = '1.0.1') -> LimitedBanner:
+def load_light_cone_banner(pity: LightConePity, version: str = '1.0.1') -> LightConeBanner:
     """loads light cone banner"""
     rate_up = _load_rate_up(RATE_UP_FILE_PATH)
     loot_pool = _load_items(STANDARD_BANNER_FILE_PATH)
@@ -81,7 +81,7 @@ def load_light_cone_banner(pity: LightConePity, version: str = '1.0.1') -> Limit
     five_star_rate_up = rate_up[version]['light cone'][5][0]
     four_star_rate_up = rate_up[version]['light cone'][4]
 
-    return LimitedBanner(loot_pool, five_star_rate_up, four_star_rate_up, pity)
+    return LightConeBanner(loot_pool, five_star_rate_up, four_star_rate_up, pity)
 
 
 def load_player_data(id: str) -> Player:

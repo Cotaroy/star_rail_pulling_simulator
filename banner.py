@@ -96,3 +96,21 @@ class LimitedBanner(Banner):
             return random.choice(self.four_star_rate_up)
         return random.choice(self.loot_pool[4])
 
+
+class LightConeBanner(LimitedBanner):
+    """light cone banner"""
+
+    def __init__(self, loot_pool, five, four, pity):
+        super().__init__(loot_pool, five, four, pity)
+
+    def pull_five_star(self) -> Item:
+        """return a random five star based on gaurantee and rate up"""
+        if self.pity.gaurantee:
+            self.pity.gaurantee = False
+            return self.five_star_rate_up
+        else:
+            rand = random.randint(1, 100)
+            if rand <= 75:
+                return self.five_star_rate_up
+            self.pity.gaurantee = True
+            return random.choice(self.loot_pool[5])

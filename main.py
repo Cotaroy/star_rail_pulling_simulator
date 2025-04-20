@@ -53,10 +53,12 @@ if __name__ == '__main__':
             inp = input()
             inp = validate_choice(inp, {'1', '2', '3', '4'})
 
+            if inp == '4':
+                choosing_banner = False
+                break
+
             if inp == '1':
                 banner = load_standard_banner(player.pity.standard_pity)
-            elif inp == '4':
-                choosing_banner = False
             else:
                 print('What version?')
                 print('Must be valid version.')
@@ -70,10 +72,6 @@ if __name__ == '__main__':
 
             pulling = True
             while pulling:
-
-                # banner = load_standard_banner(player.pity.standard_pity)
-                banner = load_limited_banner(player.pity.limited_pity)
-
                 print('-------------------------------')
                 print('What would you like to do?')
                 print('1: do a single pull')
