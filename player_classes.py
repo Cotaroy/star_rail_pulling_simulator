@@ -87,15 +87,15 @@ class Inventory:
     def __str__(self):
         five_stars = ''
         for item in self.items[5]:
-            five_stars += f'|||{item}: {self.items[5][item]}\n'
+            five_stars += f'||| \t {self.items[5][item]}\t\t:\t\t{item}\n'
 
         four_stars = ''
         for item in self.items[4]:
-            four_stars += f'|||{item}: {self.items[4][item]}\n'
+            four_stars += f'||| \t {self.items[4][item]}\t\t:\t\t{item}\n'
 
         three_stars = ''
         for item in self.items[3]:
-            three_stars += f'|||{item}: {self.items[3][item]}\n'
+            three_stars += f'||| \t {self.items[3][item]}\t\t:\t\t{item}\n'
 
         build = (f'---------------------\n'
                  f'5 STARS:\n'
