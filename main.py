@@ -66,9 +66,9 @@ if __name__ == '__main__':
                 version = validate_banner(version)
 
                 if inp == '2':
-                    banner = load_limited_banner(player.pity.limited_pity)
+                    banner = load_limited_banner(player.pity.limited_pity, version)
                 else:
-                    banner = load_light_cone_banner(player.pity.light_cone_pity)
+                    banner = load_light_cone_banner(player.pity.light_cone_pity, version)
 
             pulling = True
             while pulling:

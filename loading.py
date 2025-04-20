@@ -51,7 +51,11 @@ def _load_rate_up(file_path: str) -> dict:
             dict = {5: [], 4: []}
             for star in data[version][banner]:
                 for name in data[version][banner][star]:
-                    item = Item(name, int(star),  data[version][banner][star][name])
+                    if banner == 'limited':
+                        type = 'character'
+                    else:
+                        type = 'light cone'
+                    item = Item(name, int(star),  type)
                     dict[int(star)].append(item)
             output[version][banner] = dict
 

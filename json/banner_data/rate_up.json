@@ -1,24 +1,886 @@
 {
-    "1.0.1": {
+    "3.3.2": {
         "limited": {
-            "5": {
-                "Seele": "character"
-            },
-            "4": {
-                "Pela": "character",
-                "Natasha": "character",
-                "Hook": "character"
-            }
+            "5": [
+                "Cipher"
+            ],
+            "4": []
         },
         "light cone": {
-            "5": {
-                "In the Night": "light cone"
-            },
-            "4": {
-                "Post-Op Conversation": "light cone",
-                "The Moles Welcome You": "light cone",
-                "Good Night and Sleep Well": "light cone"
-            }
+            "5": [],
+            "4": []
+        }
+    },
+    "3.3.1": {
+        "limited": {
+            "5": [
+                "Hyacine"
+            ],
+            "4": []
+        },
+        "light cone": {
+            "5": [],
+            "4": []
+        }
+    },
+    "3.2.2": {
+        "limited": {
+            "5": [
+                "Anaxa",
+                "Dr. Ratio"
+            ],
+            "4": [
+                "Moze",
+                "Serval",
+                "Dan Heng"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Baptism of Pure Thought",
+                "Life Should Be Cast to Flames"
+            ],
+            "4": [
+                "After the Charmony Fall",
+                "Trend of the Universal Market",
+                "The Moles Welcome You"
+            ]
+        }
+    },
+    "3.2.1": {
+        "limited": {
+            "5": [
+                "Castorice",
+                "Fugue",
+                "Jiaoqiu",
+                "Acheron"
+            ],
+            "4": [
+                "Gallagher",
+                "Lynx",
+                "Pela"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Along the Passing Shore",
+                "Long Road Leads Home",
+                "Those Many Springs",
+                "Make Farewells More Beautiful"
+            ],
+            "4": [
+                "Boundless Choreo",
+                "Post-Op Conversation",
+                "Good Night and Sleep Well"
+            ]
+        }
+    },
+    "3.1.2": {
+        "limited": {
+            "5": [
+                "Mydei",
+                "Huohuo"
+            ],
+            "4": [
+                "Xueyi",
+                "Natasha",
+                "Arlan"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Flame of Blood, Blaze My Path",
+                "Night of Fright"
+            ],
+            "4": [
+                "Perfect Timing",
+                "Memories of the Past",
+                "A Secret Vow"
+            ]
+        }
+    },
+    "3.1.1": {
+        "limited": {
+            "5": [
+                "Tribbie",
+                "Yunli"
+            ],
+            "4": [
+                "Guinaifen",
+                "Lynx",
+                "Hook"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "If Time Were a Flower",
+                "Dance at Sunset"
+            ],
+            "4": [
+                "Trend of the Universal Market",
+                "Post-Op Conversation",
+                "Planetary Rendezvous"
+            ]
+        }
+    },
+    "3.0.2": {
+        "limited": {
+            "5": [
+                "Aglaea",
+                "Boothill",
+                "Robin",
+                "Silver Wolf"
+            ],
+            "4": [
+                "Hanya",
+                "Tingyun",
+                "Sushang"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Flowing Nightglow",
+                "Time Woven into Gold",
+                "Sailing Towards A Second Life",
+                "Incessant Rain"
+            ],
+            "4": [
+                "Geniuses",
+                "Dance! Dance! Dance!",
+                "Subscribe for More!"
+            ]
+        }
+    },
+    "3.0.1": {
+        "limited": {
+            "5": [
+                "The Herta",
+                "Lingsha",
+                "Feixiao",
+                "Jade"
+            ],
+            "4": [
+                "Moze",
+                "Natasha",
+                "Asta"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Into the Unreachable Veil",
+                "I Venture Forth to Hunt",
+                "Yet Hope Is Priceless",
+                "Scent Alone Stays True"
+            ],
+            "4": [
+                "Geniuses",
+                "Only Silence Remains",
+                "Landau"
+            ]
+        }
+    },
+    "2.7.2": {
+        "limited": {
+            "5": [
+                "Fugue",
+                "Firefly"
+            ],
+            "4": [
+                "Gallagher",
+                "Misha",
+                "Yukong"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Long Road Leads Home",
+                "Whereabouts Should Dreams Rest"
+            ],
+            "4": [
+                "Concert for Two",
+                "Indelible Promise",
+                "Resolution Shines As Pearls of Sweat"
+            ]
+        }
+    },
+    "2.7.1": {
+        "limited": {
+            "5": [
+                "Sunday",
+                "Jing Yuan"
+            ],
+            "4": [
+                "Tingyun",
+                "Qingque",
+                "Arlan"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Before Dawn",
+                "A Grounded Ascent"
+            ],
+            "4": [
+                "Poised to Bloom",
+                "The Birth of the Self",
+                "Swordplay"
+            ]
+        }
+    },
+    "2.6.2": {
+        "limited": {
+            "5": [
+                "Aventurine",
+                "Acheron"
+            ],
+            "4": [
+                "Sampo",
+                "Pela",
+                "March 7th"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Inherently Unjust Destiny",
+                "Along the Passing Shore"
+            ],
+            "4": [
+                "Boundless Choreo",
+                "Day One of My New Life",
+                "Make the World Clamor"
+            ]
+        }
+    },
+    "2.6.1": {
+        "limited": {
+            "5": [
+                "Rappa",
+                "Imbibitor Lunae"
+            ],
+            "4": [
+                "Xueyi",
+                "Lynx",
+                "Yukong"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Brighter Than the Sun",
+                "Ninjutsu Inscription - Dazzling Evilbreaker"
+            ],
+            "4": [
+                "Dream",
+                "After the Charmony Fall",
+                "Under the Blue Sky"
+            ]
+        }
+    },
+    "2.5.2": {
+        "limited": {
+            "5": [
+                "Lingsha",
+                "Topaz"
+            ],
+            "4": [
+                "Misha",
+                "Guinaifen",
+                "Natasha"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Scent Alone Stays True",
+                "Worrisome, Blissful"
+            ],
+            "4": [
+                "Shadowed by Night",
+                "Shared Feeling",
+                "Planetary Rendezvous"
+            ]
+        }
+    },
+    "2.5.1": {
+        "limited": {
+            "5": [
+                "Feixiao",
+                "Robin",
+                "Black Swan",
+                "Kafka"
+            ],
+            "4": [
+                "Moze",
+                "Luka",
+                "Asta"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "I Venture Forth to Hunt",
+                "Flowing Nightglow",
+                "Reforged Remembrance",
+                "Patience Is All You Need"
+            ],
+            "4": [
+                "Resolution Shines As Pearls of Sweat",
+                "The Birth of the Self",
+                "Swordplay"
+            ]
+        }
+    },
+    "2.4.2": {
+        "limited": {
+            "5": [
+                "Jiaoqiu",
+                "Sparkle"
+            ],
+            "4": [
+                "Guinaifen",
+                "Hook",
+                "Arlan"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Those Many Springs",
+                "Earthly Escapade"
+            ],
+            "4": [
+                "Poised to Bloom",
+                "Eyes of the Prey",
+                "A Secret Vow"
+            ]
+        }
+    },
+    "2.4.1": {
+        "limited": {
+            "5": [
+                "Yunli",
+                "Huohuo"
+            ],
+            "4": [
+                "Hanya",
+                "Lynx",
+                "Yukong"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Dance at Sunset",
+                "Night of Fright"
+            ],
+            "4": [
+                "Perfect Timing",
+                "The Moles Welcome You",
+                "The Birth of the Self"
+            ]
+        }
+    },
+    "2.3.2": {
+        "limited": {
+            "5": [
+                "Jade",
+                "Argenti"
+            ],
+            "4": [
+                "Serval",
+                "Natasha",
+                "Asta"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "An Instant Before A Gaze",
+                "Yet Hope Is Priceless"
+            ],
+            "4": [
+                "After the Charmony Fall",
+                "Trend of the Universal Market",
+                "Shared Feeling"
+            ]
+        }
+    },
+    "2.3.1": {
+        "limited": {
+            "5": [
+                "Firefly",
+                "Ruan Mei"
+            ],
+            "4": [
+                "Gallagher",
+                "Misha",
+                "Xueyi"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Whereabouts Should Dreams Rest",
+                "Past Self in Mirror"
+            ],
+            "4": [
+                "Day One of My New Life",
+                "Memories of the Past",
+                "Eyes of the Prey"
+            ]
+        }
+    },
+    "2.2.2": {
+        "limited": {
+            "5": [
+                "Boothill",
+                "Fu Xuan"
+            ],
+            "4": [
+                "Luka",
+                "Pela",
+                "Hook"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Sailing Towards A Second Life",
+                "She Already Shut Her Eyes"
+            ],
+            "4": [
+                "Geniuses",
+                "Landau",
+                "A Secret Vow"
+            ]
+        }
+    },
+    "2.2.1": {
+        "limited": {
+            "5": [
+                "Robin",
+                "Topaz"
+            ],
+            "4": [
+                "Xueyi",
+                "Hanya",
+                "March 7th"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Flowing Nightglow",
+                "Worrisome, Blissful"
+            ],
+            "4": [
+                "Boundless Choreo",
+                "Perfect Timing",
+                "Swordplay"
+            ]
+        }
+    },
+    "2.1.2": {
+        "limited": {
+            "5": [
+                "Aventurine",
+                "Jingliu"
+            ],
+            "4": [
+                "Lynx",
+                "Luka",
+                "Serval"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Inherently Unjust Destiny",
+                "I Shall Be My Own Sword"
+            ],
+            "4": [
+                "Concert for Two",
+                "Shared Feeling",
+                "Make the World Clamor"
+            ]
+        }
+    },
+    "2.1.1": {
+        "limited": {
+            "5": [
+                "Acheron",
+                "Luocha"
+            ],
+            "4": [
+                "Gallagher",
+                "Pela",
+                "Dan Heng"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Along the Passing Shore",
+                "Echoes of the Coffin"
+            ],
+            "4": [
+                "Subscribe for More!",
+                "Post-Op Conversation",
+                "Good Night and Sleep Well"
+            ]
+        }
+    },
+    "2.0.2": {
+        "limited": {
+            "5": [
+                "Sparkle",
+                "Jing Yuan"
+            ],
+            "4": [
+                "Hanya",
+                "Sampo",
+                "Qingque"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Earthly Escapade",
+                "Before Dawn"
+            ],
+            "4": [
+                "Under the Blue Sky",
+                "Geniuses",
+                "Planetary Rendezvous"
+            ]
+        }
+    },
+    "2.0.1": {
+        "limited": {
+            "5": [
+                "Black Swan",
+                "Imbibitor Lunae"
+            ],
+            "4": [
+                "Misha",
+                "Guinaifen",
+                "Tingyun"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Reforged Remembrance",
+                "Brighter Than the Sun"
+            ],
+            "4": [
+                "Indelible Promise",
+                "Resolution Shines As Pearls of Sweat",
+                "Dance! Dance! Dance!"
+            ]
+        }
+    },
+    "1.6.2": {
+        "limited": {
+            "5": [
+                "Dr. Ratio",
+                "Kafka"
+            ],
+            "4": [
+                "Sushang",
+                "Natasha",
+                "Hook"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Baptism of Pure Thought",
+                "Patience Is All You Need"
+            ],
+            "4": [
+                "Perfect Timing",
+                "Only Silence Remains",
+                "Landau"
+            ]
+        }
+    },
+    "1.6.1": {
+        "limited": {
+            "5": [
+                "Ruan Mei",
+                "Blade"
+            ],
+            "4": [
+                "Xueyi",
+                "Tingyun",
+                "March 7th"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Past Self in Mirror",
+                "The Unreachable Side"
+            ],
+            "4": [
+                "Day One of My New Life",
+                "Planetary Rendezvous",
+                "A Secret Vow"
+            ]
+        }
+    },
+    "1.5.2": {
+        "limited": {
+            "5": [
+                "Argenti",
+                "Silver Wolf"
+            ],
+            "4": [
+                "Hanya",
+                "Lynx",
+                "Asta"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "An Instant Before A Gaze",
+                "Incessant Rain"
+            ],
+            "4": [
+                "Under the Blue Sky",
+                "Post-Op Conversation",
+                "The Birth of the Self"
+            ]
+        }
+    },
+    "1.5.1": {
+        "limited": {
+            "5": [
+                "Huohuo"
+            ],
+            "4": [
+                "Serval",
+                "Dan Heng",
+                "Arlan"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Night of Fright"
+            ],
+            "4": [
+                "Trend of the Universal Market",
+                "Subscribe for More!",
+                "Shared Feeling"
+            ]
+        }
+    },
+    "1.4.2": {
+        "limited": {
+            "5": [
+                "Topaz",
+                "Seele"
+            ],
+            "4": [
+                "Guinaifen",
+                "Luka",
+                "Sushang"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Worrisome, Blissful",
+                "In the Night"
+            ],
+            "4": [
+                "Resolution Shines As Pearls of Sweat",
+                "Only Silence Remains",
+                "The Moles Welcome You"
+            ]
+        }
+    },
+    "1.4.1": {
+        "limited": {
+            "5": [
+                "Jingliu"
+            ],
+            "4": [
+                "Tingyun",
+                "Sampo",
+                "Qingque"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "I Shall Be My Own Sword"
+            ],
+            "4": [
+                "Memories of the Past",
+                "Eyes of the Prey",
+                "Make the World Clamor"
+            ]
+        }
+    },
+    "1.3.2": {
+        "limited": {
+            "5": [
+                "Fu Xuan"
+            ],
+            "4": [
+                "Lynx",
+                "Pela",
+                "Hook"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "She Already Shut Her Eyes"
+            ],
+            "4": [
+                "Trend of the Universal Market",
+                "Perfect Timing",
+                "Under the Blue Sky"
+            ]
+        }
+    },
+    "1.3.1": {
+        "limited": {
+            "5": [
+                "Imbibitor Lunae"
+            ],
+            "4": [
+                "Yukong",
+                "March 7th",
+                "Asta"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Brighter Than the Sun"
+            ],
+            "4": [
+                "Dance! Dance! Dance!",
+                "Landau",
+                "Planetary Rendezvous"
+            ]
+        }
+    },
+    "1.2.2": {
+        "limited": {
+            "5": [
+                "Kafka"
+            ],
+            "4": [
+                "Luka",
+                "Serval",
+                "Sampo"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Patience Is All You Need"
+            ],
+            "4": [
+                "Resolution Shines As Pearls of Sweat",
+                "The Birth of the Self",
+                "Eyes of the Prey"
+            ]
+        }
+    },
+    "1.2.1": {
+        "limited": {
+            "5": [
+                "Blade"
+            ],
+            "4": [
+                "Sushang",
+                "Natasha",
+                "Arlan"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "The Unreachable Side"
+            ],
+            "4": [
+                "Shared Feeling",
+                "Swordplay",
+                "A Secret Vow"
+            ]
+        }
+    },
+    "1.1.2": {
+        "limited": {
+            "5": [
+                "Luocha"
+            ],
+            "4": [
+                "Yukong",
+                "Qingque",
+                "Pela"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Echoes of the Coffin"
+            ],
+            "4": [
+                "Dance! Dance! Dance!",
+                "Geniuses",
+                "Good Night and Sleep Well"
+            ]
+        }
+    },
+    "1.1.1": {
+        "limited": {
+            "5": [
+                "Silver Wolf"
+            ],
+            "4": [
+                "Serval",
+                "Dan Heng",
+                "Asta"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Incessant Rain"
+            ],
+            "4": [
+                "Subscribe for More!",
+                "Memories of the Past",
+                "Make the World Clamor"
+            ]
+        }
+    },
+    "1.0.2": {
+        "limited": {
+            "5": [
+                "Jing Yuan"
+            ],
+            "4": [
+                "Tingyun",
+                "Sushang",
+                "March 7th"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "Before Dawn"
+            ],
+            "4": [
+                "Day One of My New Life",
+                "Only Silence Remains",
+                "Planetary Rendezvous"
+            ]
+        }
+    },
+    "1.0.1": {
+        "limited": {
+            "5": [
+                "Seele"
+            ],
+            "4": [
+                "Pela",
+                "Natasha",
+                "Hook"
+            ]
+        },
+        "light cone": {
+            "5": [
+                "In the Night"
+            ],
+            "4": [
+                "Post-Op Conversation",
+                "Good Night and Sleep Well",
+                "The Moles Welcome You"
+            ]
         }
     }
 }
