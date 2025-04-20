@@ -1,4 +1,4 @@
 /.idea
 /__pycache__
-/json/player_data
 to_be_scraped.html
+/json_files/player_data
