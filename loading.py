@@ -32,7 +32,7 @@ def _load_items(file_path: str) -> dict[int, list[Item]]:
     return output
 
 
-def _load_rate_up(file_path: str) -> dict:
+def load_rate_up(file_path: str) -> dict:
     """loads items from file_path"""
     with open(file_path, 'r') as file:
         data = json.load(file)
@@ -64,7 +64,7 @@ def load_standard_banner(pity: StandardPity) -> Banner:
 
 def load_limited_banner(pity: LimitedPity, version: str = '1.0.1') -> LimitedBanner:
     """loads limited banner"""
-    rate_up = _load_rate_up(RATE_UP_FILE_PATH)
+    rate_up = load_rate_up(RATE_UP_FILE_PATH)
     loot_pool = _load_items(LIMITED_BANNER_FILE_PATH)
 
     five_star_rate_up = rate_up[version]['limited'][5][0]
@@ -75,7 +75,7 @@ def load_limited_banner(pity: LimitedPity, version: str = '1.0.1') -> LimitedBan
 
 def load_light_cone_banner(pity: LightConePity, version: str = '1.0.1') -> LightConeBanner:
     """loads light cone banner"""
-    rate_up = _load_rate_up(RATE_UP_FILE_PATH)
+    rate_up = load_rate_up(RATE_UP_FILE_PATH)
     loot_pool = _load_items(LIGHT_CONE_FILE_PATH)
 
     five_star_rate_up = rate_up[version]['light cone'][5][0]

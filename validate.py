@@ -1,8 +1,8 @@
 """validating functions"""
 from loading import find_file
-from loading import _load_rate_up
+from loading import load_rate_up
 
-from constants import PLAYER_DATA_FOLDER_FILE_PATH, PLAYER_DATA_NAME_TEMPLATE, PLAYER_DATA_NAME_TEMPLATE_WITH_FOLDER
+from constants import PLAYER_DATA_FOLDER_FILE_PATH, PLAYER_DATA_NAME_TEMPLATE
 from constants import RATE_UP_FILE_PATH
 
 
@@ -51,7 +51,7 @@ def validate_banner(inp: str) -> str:
     inp is valid if
     - inp in rate_up.json
     """
-    rate_up = _load_rate_up(RATE_UP_FILE_PATH)
+    rate_up = load_rate_up(RATE_UP_FILE_PATH)
     while inp not in rate_up:
         inp = input('Please enter a valid choice. \n')
     return inp
