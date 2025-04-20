@@ -79,14 +79,14 @@ class LimitedBanner(Banner):
 
     def pull_five_star(self) -> Item:
         """return a random five star based on gaurantee and rate up"""
-        if self.pity.gaurantee:
-            self.pity.gaurantee = False
+        if self.pity.guarantee:
+            self.pity.guarantee = False
             return self.five_star_rate_up
         else:
             rand = random.randint(1, 2)
             if rand == 1:
                 return self.five_star_rate_up
-            self.pity.gaurantee = True
+            self.pity.guarantee = True
             return random.choice(self.loot_pool[5])
 
     def pull_four_star(self) -> Item:
@@ -108,12 +108,12 @@ class LightConeBanner(LimitedBanner):
 
     def pull_five_star(self) -> Item:
         """return a random five star based on gaurantee and rate up"""
-        if self.pity.gaurantee:
-            self.pity.gaurantee = False
+        if self.pity.guarantee:
+            self.pity.guarantee = False
             return self.five_star_rate_up
         else:
             rand = random.randint(1, 100)
             if rand <= 75:
                 return self.five_star_rate_up
-            self.pity.gaurantee = True
+            self.pity.guarantee = True
             return random.choice(self.loot_pool[5])

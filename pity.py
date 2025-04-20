@@ -82,14 +82,14 @@ class LimitedPity(Pity):
     - gaurantee: if 50/50 is gauranteed win
         self.gaurantee == True -> next 5 star is limited
     """
-    gaurantee: bool
+    guarantee: bool
 
     def __init__(self, four=0, five=0, gaur=False):
         super().__init__(four, five)
-        self.gaurantee = gaur
+        self.guarantee = gaur
 
     def __str__(self):
-        return f'5: {self.five_star_pity}, \t\t 4: {self.four_star_pity}, \t\t gaurantee: {self.gaurantee}'
+        return f'5: {self.five_star_pity}, \t\t 4: {self.four_star_pity}, \t\t Guarantee: {self.guarantee}'
 
     def change_pity(self, item: Item):
         """
@@ -111,7 +111,7 @@ class LimitedPity(Pity):
         to list
         returns [four pity, five pity, gaurantee]
         """
-        return [self.four_star_pity, self.five_star_pity, self.gaurantee]
+        return [self.four_star_pity, self.five_star_pity, self.guarantee]
 
 
 class StandardPity(Pity):

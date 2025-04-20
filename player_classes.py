@@ -37,10 +37,12 @@ class Player:
     def show_inventory(self):
         """show inventory"""
         print(self._inventory)
+        return str(self._inventory)
 
     def show_pity(self):
         """show pity"""
         print(self.pity)
+        return str(self.pity)
 
     def pull(self, n: int, banner: Banner):
         """
