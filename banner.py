@@ -91,6 +91,9 @@ class LimitedBanner(Banner):
 
     def pull_four_star(self) -> Item:
         """return a random four star based on rate up"""
+        if len(self.four_star_rate_up) == 0:
+            return random.choice(self.loot_pool[4])
+
         rand = random.randint(1, 2)
         if rand == 1:
             return random.choice(self.four_star_rate_up)
