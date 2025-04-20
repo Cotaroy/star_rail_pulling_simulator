@@ -1,7 +1,10 @@
-just run main
+Valid banner versions must be written like this
 
-valid banner versions are written in the format 
-- 1.0.1
-- 1.0 indicates ver1.0
-- .1 indicates first half
-- 1.0.2 is second half ver1.0
+1.0.1 -> this is seele banner because it is version 1.0 phase 1
+
+You can update valid banner versions by running scraper.py
+
+
+HOW TO RUN
+-
+Just run Main
