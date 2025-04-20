@@ -20,7 +20,7 @@ class Pity:
         self.four_star_pity, self.five_star_pity = four, five
 
     def __str__(self):
-        return f'5: {self.five_star_pity}, \t 4: {self.four_star_pity}'
+        return f'5: {self.five_star_pity}, \t\t 4: {self.four_star_pity}'
 
     def change_pity(self, item: Item):
         """
@@ -50,19 +50,19 @@ class Pity:
     def get_chance(self, star: int) -> float:
         """
         return the chance of getting an item of star rarity
-
-        TODO get actual chances (constant chances for now)
         """
         if star == 4:
             if self.at_hard_pity(4):
-                return 0.994
+                return 1 - self.get_five_star_chance()
             return 0.051
         elif star == 5:
-            if self.at_hard_pity(5):
-                return 1
-            return 0.006
-        else:
-            return 0.943
+            return self.get_five_star_chance()
+
+    def get_five_star_chance(self) -> float:
+        """get five star chance"""
+        if self.five_star_pity >= 70:
+            return (self.five_star_pity - 70) * 0.02 + 0.6
+        return 0.006
 
     def to_list(self):
         """
@@ -89,7 +89,7 @@ class LimitedPity(Pity):
         self.gaurantee = gaur
 
     def __str__(self):
-        return f'5: {self.five_star_pity}, \t 4: {self.four_star_pity}, \t gaurantee: {self.gaurantee}'
+        return f'5: {self.five_star_pity}, \t\t 4: {self.four_star_pity}, \t\t gaurantee: {self.gaurantee}'
 
     def change_pity(self, item: Item):
         """
@@ -139,5 +139,8 @@ class LightConePity(LimitedPity):
         else:
             return self.five_star_pity == 80
 
-
-
+    def get_five_star_chance(self) -> float:
+        """get five star chance"""
+        if self.five_star_pity >= 60:
+            return (self.five_star_pity - 60) * 0.02 + 0.6
+        return 0.006
