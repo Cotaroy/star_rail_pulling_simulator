@@ -61,7 +61,7 @@ class Pity:
     def get_five_star_chance(self) -> float:
         """get five star chance"""
         if self.five_star_pity >= 70:
-            return (self.five_star_pity - 70) * 0.02 + 0.6
+            return (self.five_star_pity - 70) * 0.05 + 0.006
         return 0.006
 
     def to_list(self):
@@ -142,5 +142,5 @@ class LightConePity(LimitedPity):
     def get_five_star_chance(self) -> float:
         """get five star chance"""
         if self.five_star_pity >= 60:
-            return (self.five_star_pity - 60) * 0.02 + 0.6
+            return (self.five_star_pity - 60) * 0.05 + 0.006
         return 0.006
