@@ -5,7 +5,8 @@ from loading import load_light_cone_banner, load_limited_banner, load_player_dat
 from validate import *
 
 
-if __name__ == '__main__':
+def main():
+    """main"""
 
     running = True
 
@@ -101,3 +102,7 @@ if __name__ == '__main__':
                 else:
                     pulling = False
                     print('Quitting...')
+
+
+if __name__ == '__main__':
+    main()
